@@ -21,19 +21,23 @@ project(${PROJECT_NAME})
 # set (LIBS src/*.cpp)
 # add_library(calcLib LIBS)
 
+# add_subdirectory(src)
+# add_subdirectory(tst)
+# add_subdirectory(lib/googletest)
 
-add_library(project1_lib src/addition.cpp 
-src/division.cpp 
-src/multiplication.cpp
-src/subtraction.cpp)
+#add_library(project1_lib src/addition.cpp 
+#src/division.cpp 
+#src/multiplication.cpp
+#src/subtraction.cpp)
 
-add_executable(app main.cpp)
+add_executable(${PROJECT_NAME} main.cpp)
                 # src/addition.cpp 
                 # src/division.cpp 
                 # src/multiplication.cpp
                 # src/subtraction.cpp)
-target_include_directories(app PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
-target_link_libraries(app project1_lib)
+target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
+target_link_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
+target_link_libraries(${PROJECT_NAME} project1_lib)
 
 
 # file (GLOB_RECURSE SRC_FILES "src/*.cpp")
@@ -43,6 +47,4 @@ target_link_libraries(app project1_lib)
 
 # include_directories(src)
 
-# add_subdirectory(src)
-# add_subdirectory(tst)
-# add_subdirectory(lib/googletest)
+
