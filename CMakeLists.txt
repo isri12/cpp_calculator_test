@@ -4,8 +4,17 @@ cmake_minimum_required(VERSION 3.5)
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-set(PROJECT_NAME Calculatorcpp)
+set(PROJECT_NAME calculatorcpp)
 project(${PROJECT_NAME})
+
+add_subdirectory(src)
+
+add_executable(${PROJECT_NAME} main.cpp)
+target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
+target_link_libraries(${PROJECT_NAME} calc_lib)
+
+
+
 
 #include_directories(include)
 
@@ -22,18 +31,6 @@ project(${PROJECT_NAME})
 # add_library(calcLib LIBS)
 
 
-add_library(project1_lib src/addition.cpp 
-src/division.cpp 
-src/multiplication.cpp
-src/subtraction.cpp)
-
-add_executable(app main.cpp)
-                # src/addition.cpp 
-                # src/division.cpp 
-                # src/multiplication.cpp
-                # src/subtraction.cpp)
-target_include_directories(app PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
-target_link_libraries(app project1_lib)
 
 
 # file (GLOB_RECURSE SRC_FILES "src/*.cpp")

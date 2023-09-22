@@ -1,3 +1,22 @@
+add_library(calc_lib addition.cpp 
+                    division.cpp 
+                    multiplication.cpp
+                    subtraction.cpp
+)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # # add_library(calcLib */*.cpp)
 # # #file(GLOB APP_SOURCES */*.cpp)
 
