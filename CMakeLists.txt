@@ -7,12 +7,16 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(PROJECT_NAME calculatorcpp)
 project(${PROJECT_NAME})
 
+#set()
 add_subdirectory(src)
+add_subdirectory(tests)
+#add_subdirectory( ${GOOGLETEST_PROJECT_LOCATION} build)
+add_subdirectory(/home/isri12/Documents/code/cplusplus/lib/googletest build)
 
 add_executable(${PROJECT_NAME} main.cpp)
 
 target_include_directories(${PROJECT_NAME} PRIVATE include)  #look for the header files,
-#target_link_directories(${PROJECT_NAME} PRIVATE src)  #tell to the linker which libraries you want to link against your executable.
+#target_link_directories(${PROJECT_NAME} PRIVATE include)  #tell to the linker which libraries you want to link against your executable.
 
 target_link_libraries(${PROJECT_NAME} calc_lib)
 
@@ -34,5 +38,4 @@ target_link_libraries(${PROJECT_NAME} calc_lib)
 # #globbing is not recommended https://stackoverflow.com/questions/1027247/is-it-better-to-specify-source-files-with-glob-or-each-file-individually-in-cmak/1060061#1060061
 # include_directories(src)
 # add_subdirectory(src)
-# add_subdirectory(tst)
 # add_subdirectory(lib/googletest)
