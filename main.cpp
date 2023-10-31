@@ -1,9 +1,10 @@
 #include <iostream>
-#include "include/addition.h"
-#include "include/subtraction.h"
-#include "include/multiplication.h"
-#include "include/division.h"
-#include "include/factorial.h"
+#include "addition.h"
+#include "subtraction.h"
+#include "multiplication.h"
+#include "division.h"
+#include "factorial.h"
+#include <stringmanipulator.h>
 
 int main() {
     double num1, num2;

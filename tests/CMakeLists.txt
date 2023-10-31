@@ -3,18 +3,20 @@ enable_testing()
 # add library
 add_library(Testlib 
             hello_test.cpp
-            factorialTest.cpp      
+            factorialTest.cpp
+            StringManipulatorTest.cpp      
 )
 
 add_executable( calc_test_app 
                 hello_test.cpp 
                 factorialTest.cpp
+                StringManipulatorTest.cpp
 )
 target_link_libraries(
     calc_test_app
-  GTest::gtest_main
-  Testlib
-  calc_lib
+    GTest::gtest_main
+    Testlib
+    calc_lib
 )
 
 include(GoogleTest)
