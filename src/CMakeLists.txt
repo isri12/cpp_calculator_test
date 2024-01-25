@@ -2,7 +2,11 @@ add_library(calc_lib addition.cpp
                     division.cpp 
                     multiplication.cpp
                     subtraction.cpp
-                    factorial.cpp  
+                    factorial.cpp
+                    #config.cpp #has error
+                   #stringmanipulator.cpp
+                   endianFlipper.cpp
+
 )
 
 

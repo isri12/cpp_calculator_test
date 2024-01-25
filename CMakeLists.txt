@@ -6,19 +6,27 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 set(PROJECT_NAME calculatorcpp)
 project(${PROJECT_NAME})
+set(PROJECT_EXE calculatorexe)
 
 #set()
 add_subdirectory(src)
 add_subdirectory(tests)
+
+# Find the FCGI library
+find_library(FCGI_LIBRARY fcgi)
+
 #add_subdirectory( ${GOOGLETEST_PROJECT_LOCATION} build)
 add_subdirectory(/home/isri12/Documents/code/cplusplus/lib/googletest build)
 
-add_executable(${PROJECT_NAME} main.cpp)
+add_executable(${PROJECT_EXE} main.cpp)
 
-target_include_directories(${PROJECT_NAME} PRIVATE include)  #look for the header files,
+target_include_directories(${PROJECT_EXE} PRIVATE include)  #look for the header files,
 #target_link_directories(${PROJECT_NAME} PRIVATE include)  #tell to the linker which libraries you want to link against your executable.
 
-target_link_libraries(${PROJECT_NAME} calc_lib)
+# Link against the local calc_lib
+target_link_libraries(${PROJECT_EXE} calc_lib)
+# Link against the FCGI library
+target_link_libraries(${PROJECT_EXE} ${FCGI_LIBRARY})
 
 
 

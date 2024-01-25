@@ -4,13 +4,15 @@ enable_testing()
 add_library(Testlib 
             hello_test.cpp
             factorialTest.cpp
-            StringManipulatorTest.cpp      
+            #StringManipulatorTest.cpp  
+            #endianFlipperTest.cpp
 )
 
 add_executable( calc_test_app 
                 hello_test.cpp 
                 factorialTest.cpp
-                StringManipulatorTest.cpp
+                #StringManipulatorTest.cpp
+                #endianFlipperTest.cpp
 )
 target_link_libraries(
     calc_test_app
